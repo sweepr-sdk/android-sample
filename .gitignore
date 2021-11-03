@@ -1,0 +1,8 @@
+# unnecessary files
+
+.DS_Store
+.idea/
+
+src/app/build
+src/build
+

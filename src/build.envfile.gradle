@@ -1,0 +1,31 @@
+
+def envFileName = 'env-default'
+if (System.env['ENVFILE']) {
+    envFileName = System.env['ENVFILE']
+}
+
+def envFile = rootProject.file("$envFileName")
+if (envFile.exists()) {
+    println("Reading environment variables from: $envFileName")
+
+    def envVars = [:]
+    envFile.eachLine { line ->
+        def matcher = (line =~ /^\s*(?:export\s+|)([\w\d.\-_]+)\s*=\s*['"]?(.*?)?['"]?\s*$/)
+        if (matcher.getCount() == 1 && matcher[0].size() == 3) {
+            envVars.put(matcher[0][1], matcher[0][2])
+        }
+    }
+
+    project.ext.set("environmentVariables", envVars)
+} else {
+    println("Unable to read environment variables from: $envFileName")
+}
+
+android {
+    defaultConfig {
+        project.environmentVariables.each { key, value ->
+            println("==> added property: \"$key\" with value \"$value\"")
+            buildConfigField "String", key, "\"$value\""
+        }
+    }
+}

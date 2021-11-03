@@ -1,0 +1,184 @@
+:root {
+    --maytag-blue: #2059B1;
+    --navy-blue: #213252;
+    --status-green: #8DCA8C;
+    --status-red: #B24343;
+    --status-blue: var(--maytag-blue);
+    --status-orange: #FC8E0D;
+    --black: #000000;
+    --dark-gray: #474848;
+    --medium-gray: #909090;
+    --light-gray: #ECECEC;
+    --lighter-gray: #F8F8F8;
+    --brand-primary: var(--maytag-blue);
+    --brand-secondary: var(--light-gray);
+    --text-color: var(--navy-blue);
+    
+    --spacing: 8px;
+    
+    --fw-bold: 700;
+    --fw-semibold: 500;
+    --fw-normal: 400;
+  
+    --transition-timing: .2s
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    overflow: scroll !important
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+
+
+html, body, .container {
+  height: 100%;
+}
+
+body {
+    overflow: scroll !important
+    font-family: sans-serif;
+    font-weight: var(--fw-normal);
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+.container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.step-body, .step-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-header {
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 calc(var(--spacing) * 3);
+}
+
+.step-number {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.125rem
+    font-weight: var(--fw-semibold);
+}
+
+.step-content {
+    margin-top: calc(var(--spacing) * 2);
+    padding: 0 calc(var(--spacing) * 3);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-title {
+    margin-top: 30px;
+    font-size: 1.375rem;
+    font-weight: var(--fw-bold);
+    display: inline-block;
+    margin-bottom: var(--spacing);
+}
+
+.step-description {
+    font-size: 0.75rem;
+    font-weight: var(--fw-normal);
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.button-group {
+    display: flex;
+    margin-top: 10px;
+    padding-bottom: calc(var(--spacing) * 3);
+}
+
+.button-group--vertical {
+    flex-direction: column;
+}
+
+.button-group--vertical .button-primary {
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.button {
+    transition: all var(--transition-timing) ease-in;
+    font-weight: var(--fw-bold);
+    line-height: 50px;
+    padding: 0 calc(var(--spacing) * 2);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: var(--brand-primary);
+    border: none;
+    transform: scale(1);
+    font-size: 1.125rem;
+}
+.button:active {
+  transform: scale(.95);
+}
+.button:hover {
+  opacity: .9;
+}
+
+.button-primary {
+    background-color: var(--brand-primary);
+}
+.button-secondary {
+  background-color: var(--brand-secondary);
+  color: var(--black);
+}
+
+img {
+   width: 100%;
+   height: auto;
+}
