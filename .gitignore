@@ -3,6 +3,12 @@
 .DS_Store
 .idea/
 
+*.keystore
+
 src/app/build
 src/build
+demo2/app/build
+demo2/build
+
+
 

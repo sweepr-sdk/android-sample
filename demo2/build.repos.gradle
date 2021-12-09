@@ -1,0 +1,35 @@
+
+def sweeprProperties = new Properties()
+def sweeprPropertiesFile = rootProject.file("sweepr.properties")
+
+if (sweeprPropertiesFile.exists()) {
+    sweeprProperties.load(new FileInputStream(sweeprPropertiesFile))
+} else {
+    sweeprProperties.setProperty('github.username', System.getenv("GPR_USER") ?: "undefined-user")
+    sweeprProperties.setProperty('github.token', System.getenv("GPR_API_KEY") ?: "undefined-token")
+}
+
+project.ext.sweeprProperties = sweeprProperties
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/sweepr-sdk/android")
+            credentials {
+                username = sweeprProperties["github.username"]
+                password = sweeprProperties["github.token"]
+            }
+        }
+    }
+}
+
+task printSweeprSetup {
+    println "GitHub user: ${sweeprProperties["github.username"]}"
+    println "GitHub token: ${sweeprProperties["github.token"]}"
+}
