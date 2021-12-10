@@ -84,7 +84,9 @@ class MainActivity : AppCompatActivity() {
 
             val config = SweeprConfiguration(
                 BuildConfig.APP_NAME,
-                SweeprServerConfiguration(BuildConfig.API_URL, userAgent, null, ServerUtterancesKind.Shared),
+                SweeprServerConfiguration(BuildConfig.API_URL, userAgent,
+                    null, // define URL for online assets to pick them up during user authentication
+                    ServerUtterancesKind.Shared),
                 SweeprMQTTConfiguration(
                     BuildConfig.MQTT_URL,
                     userAgent,
@@ -95,7 +97,8 @@ class MainActivity : AppCompatActivity() {
                 SweeprUXConfiguration(BuildConfig.APP_NAME, null,
                     true, // use it to get current WiFi name; otherwise specify custom NetworkDescriptor via action-delegates to provide this information
                     BuildConfig.SHOW_MENU.toBoolean(), // allow the user to logout
-                    BuildConfig.ASSETS_LOCAL_PATH, BuildConfig.ASSETS_TIMESTAMP)
+                    BuildConfig.ASSETS_LOCAL_PATH, // point folder in "assets://" or empty string to use build-in ones
+                    BuildConfig.ASSETS_TIMESTAMP)
             )
 
             // start
