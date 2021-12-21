@@ -2,7 +2,7 @@ apply from: 'build.repos.gradle'
 
 buildscript {
     ext.kotlin_version = "1.6.0"
-    ext.sweepr_framework = "1.8.4"
+    ext.sweepr_framework = "1.8.5"
 
     repositories {
         google()
