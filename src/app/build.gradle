@@ -58,7 +58,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     // Sweepr SDK
-    implementation 'com.sweepr:mobile-framework:1.8.7'
+    implementation 'com.sweepr:mobile-framework:1.9.7'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
